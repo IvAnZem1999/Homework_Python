@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome()
 driver.get("https://www.saucedemo.com/")
+driver.maximize_window()
 element_1 = driver.find_element(By.ID, "user-name")
 element_1.send_keys("standard_user")
 element_2 = driver.find_element(By.ID, "password")

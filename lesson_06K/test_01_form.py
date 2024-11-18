@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 driver = webdriver.Chrome()
 driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
+driver.maximize_window()
 element_1 = driver.find_element(By.NAME, "first-name")
 element_1.send_keys("Иван")
 element_2 = driver.find_element(By.NAME, "last-name")
