@@ -16,5 +16,5 @@ element_3 = driver.find_element(By.XPATH, '//span[text()= "+"]').click()
 element_4 = driver.find_element(By.XPATH, '//span[text()= "8"]').click()
 element_5 = driver.find_element(By.XPATH, "//span[@class='btn btn-outline-warning' and text()='=']").click()
 waiter = WebDriverWait(driver, 50)
-waiter.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "screen"), "15"))
-assert "15" in driver.find_element(By.CSS_SELECTOR, "screen").text
+waiter.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div[class='screen']"), "15"))
+assert "15" in driver.find_element(By.CSS_SELECTOR, "div[class='screen']").text
