@@ -54,18 +54,18 @@ def test_get_project_by_id_negative():
 # позитивная проверка
 def test_update_project_positiv():
     data = {
-        'deleted': 'true',
-  "title": "Мобис",
-  'users': {
-    '44f0cba9-28b7-46a6-853f-025319b9876c': 'admin'
+        'deleted': True,
+        'title': "Мобис1",
+        'users': {
+         '44f0cba9-28b7-46a6-853f-025319b9876c': 'admin'
   }
     }
-    response = requests.get("https://ru.yougile.com/api-v2/projects/bf0a32aa-4eaa-4f43-8a08-1defa0a53522", json = data, headers = my_headers)
+    response = requests.put("https://ru.yougile.com/api-v2/projects/927391e3-6c16-4494-b33c-7d16aa971397", json = data, headers = my_headers)
     assert response.status_code == 200
 
 # негативная проверка
 def test_update_project_negative():
     data = {
     }
-    response = requests.get("https://ru.yougile.com/api-v2/projects/bf0a32aa-4eaa-4f43-8a08-1defa0a535", json = data, headers = my_headers)
+    response = requests.put("https://ru.yougile.com/api-v2/projects/bf0a32aa-4eaa-4f43-8a08-1defa0a535", json = data, headers = my_headers)
     assert response.status_code == 404
