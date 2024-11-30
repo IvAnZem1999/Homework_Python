@@ -33,4 +33,3 @@ class CalculatorPage:
 
     def wait_for_result(self, expected_result):
         WebDriverWait(self.driver, 50).until(EC.text_to_be_present_in_element(self.screen, expected_result))
-
