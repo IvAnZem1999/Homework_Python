@@ -1,0 +1,37 @@
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+driver = webdriver.Chrome()
+driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
+driver.maximize_window()
+element_1 = driver.find_element(By.NAME, "first-name")
+element_1.send_keys("Иван")
+element_2 = driver.find_element(By.NAME, "last-name")
+element_2.send_keys("Петров")
+element_3 = driver.find_element(By.NAME, "address")
+element_3.send_keys("Ленина, 55-3")
+element_4 = driver.find_element(By.NAME, "zip-code")
+element_4.send_keys("")
+element_5 = driver.find_element(By.NAME, "city")
+element_5.send_keys("Москва")
+element_6 = driver.find_element(By.NAME, "country")
+element_6.send_keys("Россия")
+element_7 = driver.find_element(By.NAME, "e-mail")
+element_7.send_keys("test@skypro.com")
+element_8 = driver.find_element(By.NAME, "phone")
+element_8.send_keys("+7985899998787")
+element_9 = driver.find_element(By.NAME, "job-position")
+element_9.send_keys("QA")
+element_10 = driver.find_element(By.NAME, "company")
+element_10.send_keys("SkyPro")
+driver.find_element(By.CSS_SELECTOR, "button[class='btn btn-outline-primary mt-3']").click()
+assert 'alert-danger' in driver.find_element(By.CSS_SELECTOR, '#zip-code').get_attribute("class")
+assert 'success' in driver.find_element(By.CSS_SELECTOR, '#first-name').get_attribute("class")
+assert 'success' in driver.find_element(By.CSS_SELECTOR, '#last-name').get_attribute("class")
+assert 'success' in driver.find_element(By.CSS_SELECTOR, '#address').get_attribute("class") 
+assert 'success' in driver.find_element(By.CSS_SELECTOR, '#e-mail').get_attribute("class")
+assert 'success' in driver.find_element(By.CSS_SELECTOR, '#phone').get_attribute("class")
+assert 'success' in driver.find_element(By.CSS_SELECTOR, '#city').get_attribute("class")
