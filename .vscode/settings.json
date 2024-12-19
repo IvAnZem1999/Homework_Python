@@ -3,5 +3,10 @@
      [
         "true",
     "--ignore=D100,D103,E305"
-]
+],
+"python.testing.pytestArgs": [
+    "lesson_08"
+],
+"python.testing.unittestEnabled": false,
+"python.testing.pytestEnabled": true
 }
